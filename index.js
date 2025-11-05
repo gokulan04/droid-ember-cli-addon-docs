@@ -8,7 +8,7 @@ const Funnel = require('broccoli-funnel');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app'); // eslint-disable-line n/no-unpublished-require
 const Plugin = require('broccoli-plugin');
 const walkSync = require('walk-sync');
-
+const setupDoc = require('./lib/setupDoc');
 const LATEST_VERSION_NAME = '-latest';
 const styleDir = path.join(__dirname, 'addon', 'styles');
 
@@ -199,6 +199,7 @@ module.exports = {
     importer.import('vendor/lunr/lunr.js', {
       using: [{ transformation: 'amd', as: 'lunr' }],
     });
+    setupDoc(this.project.root);
   },
 
   createDeployPlugin() {

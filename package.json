@@ -27,8 +27,7 @@
     "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
     "test:ember": "ember test --test-port=0",
     "test:node": "mocha tests-node --recursive",
-    "test:test-apps": "cd test-apps/new-addon && pnpm test",
-    "postinstall": "node lib/setupDoc.js"
+    "test:test-apps": "cd test-apps/new-addon && pnpm test"
   },
   "dependencies": {
     "@csstools/postcss-sass": "^5.1.1",
